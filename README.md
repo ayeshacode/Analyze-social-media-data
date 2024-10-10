@@ -1,57 +1,57 @@
-Instagram Data Sentiment Analysis Report
-1. Introduction
-This project involves sentiment analysis on Instagram data to understand public sentiment towards specific topics, posts, and interactions on Instagram. The analysis leverages Natural Language Processing (NLP) techniques to preprocess text data from Instagram captions, extract sentiment scores, and visualize trends over time.
+Instagram Data Sentiment Analysis
+Overview
+This project performs sentiment analysis on Instagram data to understand public sentiment towards specific posts. By analyzing the captions of Instagram posts, the project extracts sentiment scores and visualizes trends over time using Natural Language Processing (NLP) techniques.
 
-2. Dataset
-The dataset used for this analysis includes various metrics from Instagram, such as:
+Objectives
+Analyze the sentiment of Instagram captions.
+Understand how sentiment correlates with engagement metrics like likes, comments, and shares.
+Visualize the distribution of sentiment and trends based on user engagement.
+Dataset
+The dataset includes Instagram post metrics:
 
-Impressions: Total number of impressions on the post.
+Impressions: Number of views the post received.
 Likes, Comments, Shares: User engagement metrics.
-Profile Visits, Follows: How many people visited the profile and followed after seeing the post.
-Caption: The text accompanying the post, which is the main focus for sentiment analysis.
-Hashtags: Relevant hashtags used in the post.
-3. Data Preprocessing
-To prepare the data for sentiment analysis, we performed the following steps:
-
-Cleaning Text: Removed URLs, non-alphabetic characters, and converted the text to lowercase.
-Tokenization: Split the text into individual words.
-Stopword Removal: Removed common words that do not carry sentiment (e.g., "the", "and").
-4. Sentiment Analysis
-We used the TextBlob library to analyze the sentiments of Instagram post captions. Each caption was assigned a polarity score:
-
-Positive sentiment: Polarity score > 0.
-Negative sentiment: Polarity score < 0.
-Neutral sentiment: Polarity score = 0.
-Example of Sentiment Scores:
-Caption	Cleaned Caption	Sentiment	Sentiment Label
-"Had an amazing day at the beach!"	had an amazing day beach	0.75	Positive
-"Really disappointed with the service"	really disappointed service	-0.6	Negative
-5. Key Findings
-Sentiment Distribution: A majority of the captions had a positive sentiment, with a smaller proportion of neutral and negative posts.
-Engagement vs Sentiment: Positive sentiment posts tend to have higher likes and comments compared to neutral or negative sentiment posts.
-Hashtags and Sentiment: Posts with certain hashtags are more likely to have positive sentiment.
-6. Visualizations
+Profile Visits, Follows: How many people visited the profile or followed after viewing the post.
+Caption: The text accompanying the post, which is used for sentiment analysis.
+Hashtags: Hashtags used in each post.
+Steps in the Analysis
+1. Data Preprocessing
+Cleaned the text in captions by removing URLs, non-alphabetical characters, and converting everything to lowercase.
+Tokenized the text and removed common stopwords (like "the", "and", "a").
+2. Sentiment Analysis
+Used the TextBlob library to assign a sentiment polarity score to each caption:
+Positive Sentiment: Polarity score > 0.
+Negative Sentiment: Polarity score < 0.
+Neutral Sentiment: Polarity score = 0.
+3. Visualizations
+Created visualizations to explore the distribution of sentiment in the dataset.
+Analyzed how sentiment correlates with engagement metrics like likes and comments.
+Visualizations
 a. Sentiment Distribution
-A bar plot showing the distribution of sentiment (positive, neutral, negative) across the dataset.
+A bar chart showing the distribution of positive, neutral, and negative captions.
 
-python
+b. Engagement vs. Sentiment
+A bar chart showing the average number of likes for each sentiment category (positive, neutral, negative).
+
+Tools Used
+Pandas: For data manipulation and cleaning.
+TextBlob: For sentiment analysis.
+Matplotlib: For creating visualizations.
+Google Colab: For running the analysis.
+How to Run This Project
+Clone this repository to your local machine:
+bash
 Copy code
-import matplotlib.pyplot as plt
-
-sentiment_counts = df['Sentiment_Label'].value_counts()
-plt.bar(sentiment_counts.index, sentiment_counts.values, color=['green', 'gray', 'red'])
-plt.title('Sentiment Distribution')
-plt.ylabel('Number of Captions')
-plt.show()
-b. Average Likes by Sentiment
-A bar plot showing the average number of likes per post for each sentiment category.
-
-python
+git clone https://github.com/your_username/your_repository_name.git
+Install the required Python libraries:
+bash
 Copy code
-df.groupby('Sentiment_Label')['Likes'].mean().plot(kind='bar', color=['green', 'gray', 'red'])
-plt.title('Average Likes by Sentiment')
-plt.ylabel('Average Likes')
-plt.show()
-7. Conclusion
-Positive sentiment posts generally receive more engagement in terms of likes and comments.
-Analyzing Instagram data through NLP techniques helps provide valuable insights into how people interact with posts and how their sentiments affect overall engagement.
+pip install pandas textblob matplotlib
+Run the analysis script (analysis.ipynb or analysis.py) in your Python environment or upload the notebook to Google Colab.
+Results
+Positive posts tend to receive more engagement (likes, comments) compared to neutral or negative posts.
+Captions with specific hashtags tend to have a more positive sentiment.
+Conclusion
+This analysis highlights the importance of sentiment in social media engagement. Understanding how users respond emotionally to posts can help improve marketing strategies and content creation on platforms like Instagram.
+
+
