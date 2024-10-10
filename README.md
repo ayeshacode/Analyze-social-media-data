@@ -2,12 +2,18 @@ Instagram Data Sentiment Analysis
 Overview
 This project performs sentiment analysis on Instagram data to understand public sentiment towards specific posts. By analyzing the captions of Instagram posts, the project extracts sentiment scores and visualizes trends over time using Natural Language Processing (NLP) techniques.
 
+
+
+
 Objectives
 Analyze the sentiment of Instagram captions.
 Understand how sentiment correlates with engagement metrics like likes, comments, and shares.
 Visualize the distribution of sentiment and trends based on user engagement.
 Dataset
 The dataset includes Instagram post metrics:
+
+
+
 
 Impressions: Number of views the post received.
 Likes, Comments, Shares: User engagement metrics.
@@ -42,7 +48,7 @@ How to Run This Project
 Clone this repository to your local machine:
 bash
 Copy code
-git clone https://github.com/your_username/your_repository_name.git
+git clone https://github.com/ayeshacode/Analyze-social-media-data.git
 Install the required Python libraries:
 bash
 Copy code
